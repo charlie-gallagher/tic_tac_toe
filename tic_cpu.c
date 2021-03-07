@@ -68,7 +68,6 @@ int cpu_heuristics(struct mark *board, int n_moves, int *possible_moves, char ma
 	// Try to make a fork
 	for (i = 0; i < n_moves; i++) {
 		if (cpu_twos(board, possible_moves[i], mark) == 2) {
-			printf("Making a fork!\n");
 			return possible_moves[i];
 		}
 	}
@@ -76,7 +75,6 @@ int cpu_heuristics(struct mark *board, int n_moves, int *possible_moves, char ma
 	// Block opponents fork
 	for (i = 0; i < n_moves; i++) {
 		if (cpu_twos(board, possible_moves[i], other_mark) == 2) {
-			printf("Blocking a fork!\n");
 			return possible_moves[i];
 		}
 	}
@@ -84,7 +82,6 @@ int cpu_heuristics(struct mark *board, int n_moves, int *possible_moves, char ma
 	// Try to make two in a trio, with the other one blank
 	for (i = 0; i < n_moves; i++) {
 		if (cpu_twos(board, possible_moves[i], mark) == 1) {
-			printf("Making two in a trio!\n");
 			return possible_moves[i];
 		}
 	}
@@ -92,7 +89,6 @@ int cpu_heuristics(struct mark *board, int n_moves, int *possible_moves, char ma
 
 	// Try to play in the center
 	if ((board+4)->mark == ' ') {
-		printf("Taking center\n");
 		return 4;
 	}
 
@@ -101,7 +97,6 @@ int cpu_heuristics(struct mark *board, int n_moves, int *possible_moves, char ma
 	// Try to play in a corner
 	for (i = 0; i < 4; i++) {
 		if ((board+corners[i])->mark == ' ') {
-			printf("Playing open corner\n");
 			return corners[i];
 		}
 	}
@@ -109,7 +104,6 @@ int cpu_heuristics(struct mark *board, int n_moves, int *possible_moves, char ma
 	// Try to play a side
 	for (i = 0; i < 4; i++) {
 		if ((board+sides[i])->mark == ' ') {
-			printf("Playing open side\n");
 			return sides[i];
 		}
 	}
@@ -117,6 +111,7 @@ int cpu_heuristics(struct mark *board, int n_moves, int *possible_moves, char ma
 
 	return -1;
 }
+
 
 
 
