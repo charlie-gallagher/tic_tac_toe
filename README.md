@@ -6,7 +6,7 @@ computer follows a set of heuristic rules that make strategically almost perfect
 There's nothing special about this build. 
 
 ```
-gcc -o tic tic.c tic_cpu.c
+gcc -o tic -I include src/*
 ```
 
 ### Demonstration

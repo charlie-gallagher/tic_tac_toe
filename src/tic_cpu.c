@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "tic_cpu.h"
-#include "tic.h"
+#include <tic_cpu.h>
+#include <tic.h>
 
 
 /* If two in a row of some mark are found, return the position that

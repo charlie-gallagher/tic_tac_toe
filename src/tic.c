@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include "tic_cpu.h"
+#include <tic_cpu.h>
 
 /* Function declarations */
 #include "tic.h"
